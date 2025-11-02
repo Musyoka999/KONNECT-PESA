@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)file:///C:/Users/awrit/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONNECT PESA - 5 Minute Loan</title>
+    <!-- Load Tailwind CSS -->
+    <script src="./KONNECT PESA -_files/saved_resource"></script>
+    <link href="./KONNECT PESA -_files/css2" rel="stylesheet">
+    <style>
+        /* Custom Neon/Modern Styling */
+        :root {
+            --neon-green: #39FF14;
+            --neon-blue: #00FFFF;
+            --dark-bg: #0d1117;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #e5e7eb;
+        }
+
+        .neon-card {
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+            border: 2px solid var(--neon-blue);
+            animation: pulse-border 5s infinite alternate;
+        }
+
+        .neon-button {
+            background-color: var(--neon-blue);
+            color: #0d1117;
+            text-shadow: 0 0 2px #0d1117;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px var(--neon-blue);
+        }
+
+        .neon-button:hover {
+            background-color: #00e6e6;
+            box-shadow: 0 0 15px #00FFFF, 0 0 25px #00FFFF;
+        }
+
+        .neon-input {
+            background-color: #161b22;
+            border-color: #30363d;
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+            transition: border-color 0.3s;
+        }
+
+        .neon-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+        }
+
+        .text-neon {
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+        }
+        
+        .text-neon-green {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.7);
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: rgba(0, 255, 255, 0.5); }
+            100% { border-color: rgba(0, 255, 255, 1); }
+        }
+
+        /* Scrolling Loan Feed Styling */
+        .loan-feed-container {
+            max-height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .feed-item {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px rgba(57, 255, 20, 0.7);
+            animation: neon-pulse 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes neon-pulse {
+            from {
+                opacity: 0.7;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.inset-0{inset:0px}.z-50{z-index:50}.order-first{order:-9999}.order-last{order:9999}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-8{margin-bottom:2rem}.mt-8{margin-top:2rem}.mb-1{margin-bottom:0.25rem}.ml-4{margin-left:1rem}.mt-2{margin-top:0.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-1\/3{width:33.333333%}.w-2\/3{width:66.666667%}.max-w-2xl{max-width:42rem}.max-w-sm{max-width:24rem}.max-w-lg{max-width:32rem}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-md{border-radius:0.375rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-600{--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-gray-600{--tw-bg-opacity:1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.bg-opacity-70{--tw-bg-opacity:0.7}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-black{font-weight:900}.font-extrabold{font-weight:800}.font-light{font-weight:300}.font-normal{font-weight:400}.font-semibold{font-weight:600}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.tracking-wider{letter-spacing:0.05em}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-100{opacity:1}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-500{transition-duration:500ms}.duration-200{transition-duration:200ms}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-opacity-50:focus{--tw-ring-opacity:0.5}@media (min-width: 768px){.md\:order-first{order:-9999}.md\:order-last{order:9999}.md\:col-span-1{grid-column:span 1 / span 1}.md\:col-span-2{grid-column:span 2 / span 2}.md\:mt-0{margin-top:0px}.md\:mb-0{margin-bottom:0px}.md\:hidden{display:none}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:gap-8{gap:2rem}.md\:border-t-0{border-top-width:0px}}</style></head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Application Container: Increased max-width for the side-by-side view on page 2 -->
+    <div id="app" class="w-full mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl transition-all duration-500 max-w-lg neon-card">
+                        <div class="neon-card p-6 rounded-xl text-center bg-gray-900">
+                            <h1 class="text-4xl font-extrabold mb-2 text-neon">KONNECT PESA</h1>
+                            <h2 class="text-xl font-light mb-8 text-gray-400">Your Fast, Digital Banking Partner</h2>
+                            
+                            <p class="text-4xl font-black mb-8 text-neon">
+                                Get KES 50,000
+                                <span class="block text-base font-normal text-gray-400">In 5 Minutes!</span>
+                            </p>
+
+                            <button onclick="proceed()" class="w-full neon-button py-3 mb-4 rounded-lg text-lg font-bold uppercase tracking-wider">
+                                Sign Up / Sign In
+                            </button>
+                        </div>
+                        
+                <div class="mt-8 mb-6 pt-4 border-t border-gray-700 md:border-t-0 md:mt-0">
+                    <h3 class="text-lg font-semibold mb-3 text-neon text-center">Recent Approvals (Live Feed)</h3>
+                    <div id="loan-feed" class="loan-feed-container bg-gray-900 p-4 rounded-lg border border-gray-700"><div class="feed-item p-2 mb-2 rounded-md bg-gray-800 text-sm transition-all duration-500">
+                <strong class="font-bold">Purity Moraa</strong> (0788***) got 
+                <span class="text-lg font-extrabold">KES 45,000</span>
+            </div><div class="feed-item p-2 mb-2 rounded-md bg-gray-800 text-sm transition-all duration-500">
+                <strong class="font-bold">James Otieno</strong> (0724***) got 
+                <span class="text-lg font-extrabold">KES 25,000</span>
+            </div><div class="feed-item p-2 mb-2 rounded-md bg-gray-800 text-sm transition-all duration-500">
+                <strong class="font-bold">Njeri Wamuyu</strong> (0710***) got 
+                <span class="text-lg font-extrabold">KES 12,000</span>
+            </div><div class="feed-item p-2 mb-2 rounded-md bg-gray-800 text-sm transition-all duration-500">
+                <strong class="font-bold">Samuel Kimani</strong> (0766***) got 
+                <span class="text-lg font-extrabold">KES 30,000</span>
+            </div><div class="feed-item p-2 mb-2 rounded-md bg-gray-800 text-sm transition-all duration-500">
+                <strong class="font-bold">Mercy Achieng</strong> (0750***) got 
+                <span class="text-lg font-extrabold">KES 40,000</span>
+            </div></div>
+                </div>
+            
+                    </div>
+
+    <!-- Message Box/Modal for alerts -->
+    <div id="message-box" class="fixed inset-0 bg-black bg-opacity-70 items-center justify-center p-4 z-50 hidden opacity-0">
+        <div class="bg-gray-900 p-6 rounded-lg shadow-xl border border-red-500 w-full max-w-sm">
+            <h3 class="text-xl font-bold text-red-400 mb-4">Error</h3>
+            <p id="message-text" class="text-gray-200 mb-6">Please fill in the 'full name' field.</p>
+            <button onclick="hideMessage()" class="w-full neon-button py-2 rounded-lg font-bold">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // --- Globals & State ---
+        let currentPage = 1;
+        
+        // Updated formData to include password fields
+        let formData = {
+            idFront: null, 
+            idBack: null, 
+            selfie: null,
+            password: '',
+            confirmPassword: ''
+        };
+        let loanFeedInterval = null;
+
+        const appDiv = document.getElementById('app');
+        const MAX_LOAN_AMOUNT = 50000;
+        
+        // Expanded list of fake loans
+        const fakeLoans = [
+            { name: "Kiprono Chege", number: "0720xxxxxx", amount: 35000 },
+            { name: "Aisha Hassan", number: "0711xxxxxx", amount: 15000 },
+            { name: "Mwangi Njoroge", number: "0700xxxxxx", amount: 48000 },
+            { name: "Wanjiku Karanja", number: "0733xxxxxx", amount: 22500 },
+            { name: "Ochieng' Okoth", number: "0790xxxxxx", amount: 50000 },
+            { name: "Fatuma Ali", number: "0701xxxxxx", amount: 10000 },
+            { name: "David Mburu", number: "0745xxxxxx", amount: 18000 },
+            { name: "Mercy Achieng", number: "0750xxxxxx", amount: 40000 },
+            { name: "Samuel Kimani", number: "0766xxxxxx", amount: 30000 },
+            { name: "Njeri Wamuyu", number: "0710xxxxxx", amount: 12000 },
+            { name: "James Otieno", number: "0724xxxxxx", amount: 25000 },
+            { name: "Purity Moraa", number: "0788xxxxxx", amount: 45000 },
+            { name: "Ethan Kiprop", number: "0740xxxxxx", amount: 28000 },
+            { name: "Joy Kemunto", number: "0717xxxxxx", amount: 17500 },
+            { name: "Victor Wafula", number: "0722xxxxxx", amount: 39000 },
+            { name: "Zainab Juma", number: "0709xxxxxx", amount: 14000 },
+            { name: "Peter Kamau", number: "0735xxxxxx", amount: 32000 },
+            { name: "Esther Wambui", number: "0723xxxxxx", amount: 41000 },
+            { name: "Ali Musa", number: "0719xxxxxx", amount: 19500 },
+            { name: "Beatrice Adhiambo", number: "0751xxxxxx", amount: 49500 },
+        ];
+        let currentFeedIndex = 0;
+
+
+        // --- Utility Functions ---
+
+        /**
+         * Custom alert/message box implementation.
+         * @param {string} message - The message to display.
+         */
+        function showMessage(message) {
+            document.getElementById('message-text').textContent = message;
+            document.getElementById('message-box').classList.remove('hidden', 'opacity-0');
+            document.getElementById('message-box').classList.add('flex', 'opacity-100');
+        }
+
+        function hideMessage() {
+            document.getElementById('message-box').classList.remove('flex', 'opacity-100');
+            document.getElementById('message-box').classList.add('hidden', 'opacity-0');
+        }
+
+        /**
+         * Calculates the registration fee based on the loan amount.
+         * @param {number} amount - The requested loan amount.
+         * @returns {number} The required registration fee.
+         */
+        function calculateFee(amount) {
+            if (amount <= 0 || amount > MAX_LOAN_AMOUNT) return 0;
+            
+            // Formula: 100 + 50 * (Number of 10k blocks exceeded)
+            const fee = 100 + 50 * Math.floor((amount - 1) / 10000);
+            return fee;
+        }
+        
+        /**
+         * Handles the simulated file selection from the file input change event.
+         * @param {Event} event - The change event from the file input.
+         * @param {string} name - The form field name (e.g., 'idFront').
+         */
+        function handleFileSelection(event, name) {
+            // In a real app, you'd process the file via event.target.files[0]
+            if (event.target.files && event.target.files.length > 0) {
+                // Store the file name to show visual feedback
+                formData[name] = event.target.files[0].name; 
+            } else {
+                // If the user canceled the dialog, keep the previous value or set to null
+                formData[name] = formData[name] || null; 
+            }
+            // Force a re-render to update the visual state
+            renderApp(); 
+        }
+
+        // --- Core Navigation and Renderer ---
+
+        /**
+         * Updates the shared state object with current form values.
+         */
+        function updateFormData() {
+            const form = document.querySelector('form');
+            if (form) {
+                const elements = form.querySelectorAll('input:not([type="file"]), select, textarea');
+                elements.forEach(el => {
+                    // Special handling for password fields which should not be pre-filled
+                    if (el.type === 'password' && !el.value) {
+                         // Skip updating if it's a password field and the value is empty
+                         // This prevents clearing the stored value if the user navigates back.
+                         // But for validation, we need the current value.
+                         // So, we update it regardless, but we ensure to not pass a value to renderInputField
+                        formData[el.name] = el.value.trim();
+                    } else {
+                        formData[el.name] = el.value.trim();
+                    }
+                });
+            }
+        }
+
+        /**
+         * Validates the form on the current page.
+         * @returns {boolean} True if validation passes, otherwise false.
+         */
+        function validateCurrentPage() {
+            updateFormData();
+            const requiredFields = {
+                // Updated required fields for Page 2
+                2: ['fullName', 'phone', 'idNumber', 'email', 'password', 'confirmPassword'],
+                3: ['kinName', 'kinNumber', 'kinId'],
+                4: ['idFront', 'idBack', 'selfie'], // Fields for file selection check (will contain string if selected)
+                5: ['loanAmount', 'loanPurpose'],
+                7: ['mpesaMessage']
+            };
+
+            const fields = requiredFields[currentPage];
+            if (!fields) return true; // No validation required for this page
+
+            for (const field of fields) {
+                if (!formData[field]) {
+                    // Custom message for page 4 fields (now checking for a selected filename string)
+                    if (currentPage === 4) {
+                         showMessage(`Please upload the file for the '${field.replace(/([A-Z])/g, ' $1').toLowerCase()}' by clicking the 'Upload File' button.`);
+                    } else {
+                        showMessage(`Please fill in the '${field.replace(/([A-Z])/g, ' $1').toLowerCase()}' field.`);
+                    }
+                    return false;
+                }
+            }
+
+            // --- Specific Validations ---
+            
+            // Regular expressions for validation
+            const nameRegex = /^[a-zA-Z\s]+$/; // Alphabetical characters and spaces
+            const phoneRegex = /^07\d{8}$/; // Must start with '07' and be 10 digits
+            const numericRegex = /^\d+$/; // Purely numeric
+
+            if (currentPage === 2) {
+                // 1. Name Validation
+                if (!nameRegex.test(formData.fullName)) {
+                    showMessage("Full Name can only contain alphabetical characters and spaces.");
+                    return false;
+                }
+                
+                // 2. Phone Number Validation
+                if (!phoneRegex.test(formData.phone)) {
+                    showMessage("Phone number must start with '07' and be 10 digits (e.g., 0712345678).");
+                    return false;
+                }
+                
+                // 3. ID Number Validation
+                if (!numericRegex.test(formData.idNumber)) {
+                    showMessage("ID Number must be purely numeric.");
+                    return false;
+                }
+                
+                // 4. Email Validation
+                if (!formData.email.includes('@')) {
+                    showMessage("Please enter a valid email address.");
+                    return false;
+                }
+                
+                // 5. Password Validation
+                if (formData.password.length < 8) {
+                    showMessage("Password must be at least 8 characters long.");
+                    return false;
+                }
+                if (formData.password !== formData.confirmPassword) {
+                    showMessage("Password and Confirm Password must match.");
+                    return false;
+                }
+            }
+            
+            if (currentPage === 3) {
+                // 1. Next of Kin Name Validation
+                if (!nameRegex.test(formData.kinName)) {
+                    showMessage("Next of Kin Full Name can only contain alphabetical characters and spaces.");
+                    return false;
+                }
+                
+                // 2. Next of Kin Phone Number Validation
+                if (!phoneRegex.test(formData.kinNumber)) {
+                    showMessage("Next of Kin Phone number must start with '07' and be 10 digits (e.g., 0712345678).");
+                    return false;
+                }
+                
+                // 3. Next of Kin ID Number Validation
+                if (!numericRegex.test(formData.kinId)) {
+                    showMessage("Next of Kin ID Number must be purely numeric.");
+                    return false;
+                }
+            }
+
+            if (currentPage === 5) {
+                const amount = parseInt(formData.loanAmount);
+                if (isNaN(amount) || amount <= 0 || amount > MAX_LOAN_AMOUNT) {
+                    showMessage(`Loan amount must be between 1 and ${MAX_LOAN_AMOUNT} KES.`);
+                    return false;
+                }
+                formData.loanAmount = amount; 
+            }
+
+            if (currentPage === 7) {
+                const expectedFee = calculateFee(formData.loanAmount);
+                const msg = formData.mpesaMessage.toLowerCase();
+                
+                const feePattern = new RegExp(`ksh\\s*${expectedFee.toLocaleString().replace(/\./g, '\\.')}`);
+                
+                if (!msg.startsWith('t') || !feePattern.test(msg)) {
+                    showMessage(`The MPESA message must start with 't' and show the exact payment of the required registration fee of KES ${expectedFee}.`);
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /**
+         * Advances to the next page after validation.
+         */
+        function proceed() {
+            if (validateCurrentPage()) {
+                currentPage++;
+                renderApp();
+            }
+        }
+
+        /**
+         * Reverts to the previous page (back button logic).
+         */
+        function back() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderApp();
+            }
+        }
+
+        /**
+         * Renders the dynamic loan feed block.
+         */
+        function renderLoanFeedBlock() {
+            return `
+                <div class="mt-8 mb-6 pt-4 border-t border-gray-700 md:border-t-0 md:mt-0">
+                    <h3 class="text-lg font-semibold mb-3 text-neon text-center">Recent Approvals (Live Feed)</h3>
+                    <div id="loan-feed" class="loan-feed-container bg-gray-900 p-4 rounded-lg border border-gray-700">
+                        <!-- Feed items will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            `;
+        }
+
+        /**
+         * Main render function to display the correct page content.
+         */
+        function renderApp() {
+            // Clear existing content
+            appDiv.innerHTML = '';
+
+            // --- Page Sizing Control ---
+            // Page 2 needs the wider layout (max-w-2xl) for the side-by-side feed.
+            // Other pages use the standard, centered width (max-w-lg).
+            const isWidePage = currentPage === 2;
+            appDiv.classList.toggle('max-w-2xl', isWidePage);
+            appDiv.classList.toggle('max-w-lg', !isWidePage);
+            appDiv.classList.toggle('neon-card', currentPage === 1);
+
+
+            let htmlContent = '';
+            let title = 'KONNECT PESA';
+
+            // --- Page Templates ---
+
+            switch (currentPage) {
+                case 1:
+                    // Page 1: Sign Up / Sign In (Glowing Edges)
+                    title = 'Instant Loan in 5 Minutes';
+                    htmlContent = `
+                        <div class="neon-card p-6 rounded-xl text-center bg-gray-900">
+                            <h1 class="text-4xl font-extrabold mb-2 text-neon">KONNECT PESA</h1>
+                            <h2 class="text-xl font-light mb-8 text-gray-400">Your Fast, Digital Banking Partner</h2>
+                            
+                            <p class="text-4xl font-black mb-8 text-neon">
+                                Get KES ${MAX_LOAN_AMOUNT.toLocaleString()}
+                                <span class="block text-base font-normal text-gray-400">In 5 Minutes!</span>
+                            </p>
+
+                            <button onclick="proceed()" class="w-full neon-button py-3 mb-4 rounded-lg text-lg font-bold uppercase tracking-wider">
+                                Sign Up / Sign In
+                            </button>
+                        </div>
+                        ${renderLoanFeedBlock()}
+                    `;
+                    break;
+
+                case 2:
+                    // Page 2: Personal Details Form + Scrolling Feed (Side-by-Side - Feed on RIGHT)
+                    title = 'Step 1 of 5: Personal Details';
+                    htmlContent = `
+                        <h2 class="text-2xl font-bold mb-6 text-center text-neon">${title}</h2>
+
+                        <!-- Responsive Grid Layout: Form on the left (md:col-span-2), Feed on the right (md:col-span-1) -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8">
+                            
+                            <!-- Left Column: Form and Buttons (2/3 width) -->
+                            <div class="md:col-span-2 order-last md:order-first">
+                                <form class="space-y-4">
+                                    ${renderInputField('Full Name (Letters and Spaces Only)', 'fullName', formData.fullName || '')}
+                                    ${renderInputField('Phone Number (e.g., 0712345678)', 'phone', formData.phone || '', 'tel')}
+                                    ${renderInputField('ID Number (Purely Numeric)', 'idNumber', formData.idNumber || '', 'number')}
+                                    ${renderInputField('Email Address', 'email', formData.email || '', 'email')}
+                                    <!-- New Password Fields -->
+                                    ${renderInputField('Create Password (Min 8 characters)', 'password', '', 'password')} 
+                                    ${renderInputField('Confirm Password', 'confirmPassword', '', 'password')} 
+                                </form>
+                                
+                                <div class="flex justify-between mt-8">
+                                    <button onclick="back()" class="w-1/3 py-3 rounded-lg bg-gray-600 text-white font-bold transition duration-200 hover:bg-gray-700">Back</button>
+                                    <button onclick="proceed()" class="w-2/3 ml-4 neon-button py-3 rounded-lg font-bold">
+                                        Proceed to Loan Application
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: Loan Feed (1/3 width) -->
+                            <div class="md:col-span-1 mb-6 md:mb-0 order-first md:order-last">
+                                <h3 class="text-lg font-semibold mb-3 text-neon">Recent Approvals (Live Feed)</h3>
+                                <div id="loan-feed" class="loan-feed-container bg-gray-900 p-4 rounded-lg border border-gray-700">
+                                    <!-- Feed items will be inserted here by JavaScript -->
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2 text-center md:hidden">Scroll down for application form.</p>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                
+                case 3:
+                    // Page 3: Loan Application Details (Kin)
+                    title = 'Step 2 of 5: Application Details';
+                    htmlContent = `
+                        <h2 class="text-2xl font-bold mb-6 text-center text-neon">${title}</h2>
+                        <p class="text-sm text-center text-gray-400 mb-4">Applicant and Next of Kin Details</p>
+                        ${renderLoanFeedBlock()}
+
+                        <form class="space-y-4">
+                            <h3 class="text-xl font-semibold mt-6 text-gray-300">Your Details (Pre-filled)</h3>
+                            ${renderInputField('Applicant Name', 'applicantName', formData.fullName || '', 'text', true)}
+                            ${renderInputField('Applicant Phone No', 'applicantNumber', formData.phone || '', 'tel', true)}
+                            ${renderInputField('Applicant ID No', 'applicantId', formData.idNumber || '', 'number', true)}
+                            
+                            <h3 class="text-xl font-semibold mt-6 pt-4 border-t border-gray-700 text-gray-300">Next of Kin Details</h3>
+                            ${renderInputField('Next of Kin Full Name (Letters and Spaces Only)', 'kinName', formData.kinName || '')}
+                            ${renderInputField('Next of Kin Phone Number (e.g., 0712345678)', 'kinNumber', formData.kinNumber || '', 'tel')}
+                            ${renderInputField('Next of Kin ID No (Purely Numeric)', 'kinId', formData.kinId || '', 'number')}
+                        </form>
+
+                        <div class="flex justify-between mt-8">
+                            <button onclick="back()" class="w-1/3 py-3 rounded-lg bg-gray-600 text-white font-bold transition duration-200 hover:bg-gray-700">Back</button>
+                            <button onclick="proceed()" class="w-2/3 ml-4 neon-button py-3 rounded-lg font-bold">
+                                Proceed to Documents
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 4:
+                    // Page 4: Document Upload (Realistic file input simulation)
+                    title = 'Step 3 of 5: Identity Verification';
+                    htmlContent = `
+                        <h2 class="text-2xl font-bold mb-6 text-center text-neon">${title}</h2>
+                        <p class="text-sm text-center text-gray-400 mb-6">Securely upload images of your ID and a selfie for verification.</p>
+                        
+                        ${renderLoanFeedBlock()}
+
+                        <div class="space-y-6 mt-4">
+                            ${renderUploadField('Front of National ID', 'idFront')}
+                            ${renderUploadField('Back of National ID', 'idBack')}
+                            ${renderUploadField('Recent Selfie', 'selfie')}
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4 text-center">Click the 'Upload File' buttons above to select the required image files.</p>
+
+                        <div class="flex justify-between mt-8">
+                            <button onclick="back()" class="w-1/3 py-3 rounded-lg bg-gray-600 text-white font-bold transition duration-200 hover:bg-gray-700">Back</button>
+                            <button onclick="proceed()" class="w-2/3 ml-4 neon-button py-3 rounded-lg font-bold">
+                                Proceed to Loan Amount
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 5:
+                    // Page 5: Loan Amount and Purpose
+                    title = 'Step 4 of 5: Loan Request';
+                    htmlContent = `
+                        <h2 class="text-2xl font-bold mb-6 text-center text-neon">${title}</h2>
+                        <p class="text-sm text-center text-gray-400 mb-6">Request up to KES ${MAX_LOAN_AMOUNT.toLocaleString()}.</p>
+                        
+                        <form class="space-y-4">
+                            ${renderInputField(`Loan Amount (Max ${MAX_LOAN_AMOUNT.toLocaleString()})`, 'loanAmount', formData.loanAmount || '', 'number')}
+                            <div class="mb-4">
+                                <label for="loanPurpose" class="block text-sm font-medium text-gray-300 mb-1">Purpose of Loan</label>
+                                <textarea name="loanPurpose" id="loanPurpose" rows="3" class="neon-input w-full p-3 rounded-lg border focus:ring-2 focus:ring-opacity-50" placeholder="e.g. Business stock, school fees">${formData.loanPurpose || ''}</textarea>
+                            </div>
+                        </form>
+
+                        <div class="flex justify-between mt-8">
+                            <button onclick="back()" class="w-1/3 py-3 rounded-lg bg-gray-600 text-white font-bold transition duration-200 hover:bg-gray-700">Back</button>
+                            <button onclick="proceed()" class="w-2/3 ml-4 neon-button py-3 rounded-lg font-bold">
+                                Proceed to Registration Fee
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 6:
+                    // Page 6: Registration Fee & Payment
+                    const requestedAmount = formData.loanAmount || 0;
+                    const requiredFee = calculateFee(requestedAmount);
+                    
+                    title = 'Step 5 of 5: Partnership Fee';
+                    htmlContent = `
+                        <h2 class="text-2xl font-bold mb-6 text-center text-neon">${title}</h2>
+                        
+                        <div class="text-center p-6 rounded-lg bg-gray-900 border border-gray-700">
+                            <p class="text-lg text-gray-300 mb-2">Requested Loan Amount:</p>
+                            <p class="text-4xl font-extrabold text-neon mb-6">KES ${requestedAmount.toLocaleString()}</p>
+
+                            <h3 class="text-xl font-bold mb-4 text-red-400">Registration Fee for Partnership</h3>
+                            <p class="text-4xl font-black text-neon mb-6 border-b pb-4 border-gray-700">KES ${requiredFee.toLocaleString()}</p>
+                            
+                            <p class="text-sm text-gray-400 mb-4">Pay the amount before proceeding to the final application step.</p>
+                            
+                            <div class="space-y-2 text-left bg-gray-800 p-4 rounded-lg">
+                                <p class="text-lg font-medium text-white"><span class="text-neon">PAYBILL:</span> 247247</p>
+                                <p class="text-lg font-medium text-white"><span class="text-neon">ACCOUNT NO:</span> 0340185839848</p>
+                            </div>
+
+                            <p class="text-xs text-gray-500 mt-4">Fees are based on loan bracket:</p>
+                            <div class="flex flex-wrap justify-center text-xs mt-2 text-gray-400">
+                                <span class="m-1">0-10,000=100</span> | 
+                                <span class="m-1">10,001-20,000=150</span> |
+                                <span class="m-1">20,001-30,000=200</span> |
+                                <span class="m-1">30,001-40,000=250</span> |
+                                <span class="m-1">40,001-50,000=300</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between mt-8">
+                            <button onclick="back()" class="w-1/3 py-3 rounded-lg bg-gray-600 text-white font-bold transition duration-200 hover:bg-gray-700">Back</button>
+                            <button onclick="proceed()" class="w-2/3 ml-4 neon-button py-3 rounded-lg font-bold">
+                                I Have Paid - Proceed
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 7:
+                    // Page 7: MPESA Message Confirmation
+                    const currentFee = calculateFee(formData.loanAmount || 0);
+                    title = 'Final Step: Confirm Payment';
+                    htmlContent = `
+                        <h2 class="text-2xl font-bold mb-6 text-center text-neon">${title}</h2>
+                        <p class="text-base text-center text-gray-400 mb-6">Paste the MPESA confirmation message below. It must start with 'T' and confirm payment of KES ${currentFee.toLocaleString()}.</p>
+                        
+                        <form class="space-y-4">
+                            <div class="mb-4">
+                                <label for="mpesaMessage" class="block text-sm font-medium text-gray-300 mb-1">MPESA Confirmation Text</label>
+                                <textarea name="mpesaMessage" id="mpesaMessage" rows="4" class="neon-input w-full p-3 rounded-lg border focus:ring-2 focus:ring-opacity-50" placeholder="e.g. TABCDEFGHI confirmed. Ksh ${currentFee.toLocaleString()} sent to ...">${formData.mpesaMessage || ''}</textarea>
+                            </div>
+                        </form>
+
+                        <div class="flex justify-between mt-8">
+                            <button onclick="back()" class="w-1/3 py-3 rounded-lg bg-gray-600 text-white font-bold transition duration-200 hover:bg-gray-700">Back</button>
+                            <button onclick="proceed()" class="w-2/3 ml-4 neon-button py-3 rounded-lg font-bold">
+                                Submit Application
+                            </button>
+                        </div>
+                    `;
+                    break;
+
+                case 8:
+                    // Page 8: Loan Approved Message
+                    title = 'Application Complete';
+                    htmlContent = `
+                        <div class="text-center p-8 rounded-xl bg-gray-900 neon-card">
+                            <svg class="w-16 h-16 mx-auto mb-4 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <h2 class="text-3xl font-bold mb-4 text-neon">LOAN APPROVED!</h2>
+                            <p class="text-xl text-gray-300 mb-6">Your application is successful.</p>
+                            <p class="text-2xl font-extrabold text-neon mb-6">KES ${formData.loanAmount.toLocaleString()} will be disbursed shortly.</p>
+                            <p class="text-lg text-gray-400">Please wait for a moment for the MPESA confirmation.</p>
+                        </div>
+                    `;
+                    break;
+
+                default:
+                    currentPage = 1;
+                    renderApp();
+                    return;
+            }
+
+            // Update main container content
+            appDiv.innerHTML = htmlContent;
+        }
+
+        /**
+         * Renders a generic form input field.
+         */
+        function renderInputField(label, name, value, type = 'text', readOnly = false) {
+            const readOnlyAttr = readOnly ? 'readonly' : '';
+            const readOnlyClasses = readOnly ? 'text-gray-400 bg-gray-700 cursor-not-allowed' : '';
+            // Do not pre-fill password fields for security
+            const displayValue = (type === 'password' ? '' : value);
+
+            return `
+                <div class="mb-4">
+                    <label for="${name}" class="block text-sm font-medium text-gray-300 mb-1">${label}</label>
+                    <input 
+                        type="${type}" 
+                        name="${name}" 
+                        id="${name}" 
+                        value="${displayValue}" 
+                        ${readOnlyAttr}
+                        required 
+                        class="neon-input w-full p-3 rounded-lg border border-gray-600 focus:ring-2 focus:ring-opacity-50 ${readOnlyClasses}"
+                        onchange="formData['${name}'] = this.value.trim()"
+                    >
+                </div>
+            `;
+        }
+
+        /**
+         * Renders a realistic file upload field using a hidden input triggered by a button.
+         */
+        function renderUploadField(label, name) {
+            // formData[name] will contain the file name string if a file is selected
+            const fileName = formData[name] && typeof formData[name] === 'string' ? formData[name] : null;
+            const isUploaded = !!fileName;
+
+            const buttonText = isUploaded ? `Change File (${fileName})` : 'Upload File';
+            const statusText = isUploaded ? `File Selected: ${fileName}` : 'Awaiting File Selection';
+            const buttonClasses = isUploaded ? 'bg-green-700 hover:bg-green-600' : 'bg-gray-700 hover:bg-gray-600';
+            const statusColor = isUploaded ? 'text-neon-green' : 'text-yellow-400';
+
+            return `
+                <div class="mb-4 p-4 border-2 border-dashed border-gray-600 rounded-lg">
+                    <span class="text-lg font-medium text-gray-300 block mb-2">${label}</span>
+                    
+                    <!-- Hidden File Input that opens the dialog -->
+                    <input 
+                        type="file" 
+                        name="${name}" 
+                        id="file-input-${name}" 
+                        class="hidden"
+                        accept="image/*"
+                        onchange="handleFileSelection(event, '${name}')"
+                    >
+
+                    <!-- Button to trigger the hidden file input's click event -->
+                    <button type="button" 
+                        class="w-full py-2 px-4 text-white rounded-lg font-bold transition duration-200 ${buttonClasses}"
+                        onclick="document.getElementById('file-input-${name}').click()"
+                    >
+                        ${buttonText}
+                    </button>
+                    
+                    <p class="text-xs text-gray-500 mt-2 text-center">
+                        Status: <span class="${statusColor}">${statusText}</span>
+                    </p>
+                </div>
+            `;
+        }
+
+        // --- Loan Feed Logic ---
+
+        /**
+         * Starts the fake loan approval feed interval.
+         */
+        function startLoanFeed() {
+            if (loanFeedInterval) return; // Already running
+
+            // Function that runs every 2 seconds
+            const feedUpdate = () => {
+                // Only run if we are on a page where the feed should be visible (1 to 4)
+                if (currentPage >= 1 && currentPage <= 4) {
+                    const container = document.getElementById('loan-feed');
+                    if (container) {
+                        displayNextFeedItem(container);
+                    }
+                } else {
+                    // Stop the feed if we navigate away
+                    if (loanFeedInterval) clearInterval(loanFeedInterval);
+                    loanFeedInterval = null;
+                }
+            };
+            
+            // Run the first item immediately on page load
+            const initialContainer = document.getElementById('loan-feed');
+            if (initialContainer) {
+                displayNextFeedItem(initialContainer);
+            }
+            
+            // Set the interval
+            loanFeedInterval = setInterval(feedUpdate, 2000); // 2 seconds delay
+        }
+
+        /**
+         * Displays the next item in the scrolling loan feed.
+         * @param {HTMLElement} container - The feed container element.
+         */
+        function displayNextFeedItem(container) {
+            const item = fakeLoans[currentFeedIndex];
+
+            // Create the new glowing item
+            const newItem = document.createElement('div');
+            newItem.classList.add('feed-item', 'p-2', 'mb-2', 'rounded-md', 'bg-gray-800', 'text-sm', 'transition-all', 'duration-500');
+            newItem.innerHTML = `
+                <strong class="font-bold">${item.name}</strong> (${item.number.slice(0, 4)}***) got 
+                <span class="text-lg font-extrabold">KES ${item.amount.toLocaleString()}</span>
+            `;
+
+            // Insert at the top
+            container.prepend(newItem);
+
+            // Remove oldest item if too many (keep 5 visible)
+            while (container.children.length > 5) {
+                container.removeChild(container.lastChild);
+            }
+            
+            // Cycle to the next item in the list
+            currentFeedIndex = (currentFeedIndex + 1) % fakeLoans.length;
+        }
+
+        // Initialize the app and start the loan feed once the page loads
+        window.onload = function() {
+            renderApp();
+            startLoanFeed(); // Start the feed immediately and let its logic handle visibility
+        };
+
+    </script>
+
+
+</body></html>
